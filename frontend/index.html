@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NYC Taxi Mobility Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>NYC Taxi Mobility Dashboard</h1>
+        <p>Explore taxi demand, route economics, and suspicious data patterns.</p>
+    </header>
+
+    <main>
+        <section class="cards" id="cards"></section>
+
+        <section class="filters">
+            <label>
+                Borough
+                <select id="borough">
+                    <option value="">All</option>
+                </select>
+            </label>
+
+            <label>
+                Min distance
+                <input
+                    id="distance"
+                    type="number"
+                    min="0"
+                    value="0"
+                >
+            </label>
+
+            <button id="apply">Apply</button>
+        </section>
+
+        <section class="grid">
+            <article>
+                <h2>Trips by hour</h2>
+                <canvas id="hourlyChart"></canvas>
+            </article>
+
+            <article>
+                <h2>Trips by pickup borough</h2>
+                <canvas id="boroughChart"></canvas>
+            </article>
+
+            <article>
+                <h2>Top pickup zones</h2>
+                <ol id="zones"></ol>
+            </article>
+
+            <article>
+                <h2>Ranked routes</h2>
+                <ol id="routes"></ol>
+            </article>
+        </section>
+
+        <section>
+            <h2>Trip detail</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pickup time</th>
+                        <th>Route</th>
+                        <th>Distance</th>
+                        <th>Duration</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+
+                <tbody id="trips"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 2rem;
+}
+
+main {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.card,
+article,
+.filters,
+section > table {
+    background: white;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 24px #0001;
+}
+
+.card strong {
+    font-size: 1.8rem;
+    display: block;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+button {
+    background: #111827;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+}
+
+input,
+select {
+    padding: 0.55rem;
+    border: 1px solid #ccd;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
