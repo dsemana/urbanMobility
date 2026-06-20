@@ -40,11 +40,6 @@ The eight exclusion rules, their thresholds, and the three derived features (`tr
 
 ---
 
-## Declaration
-
-I confirm that artificial intelligence tools were used solely as a learning aid — to clarify concepts and better understand the assignment requirements. No AI tool was used to produce, generate, or write any submitted code, database schema, system design, or written analysis. All technical work represents my own original effort.
----
-
 ## What this app does
 
 Processes **7.49 million NYC yellow taxi trips** from January 2019 into a clean relational database, serves the data through a REST API, and visualises it in an interactive dashboard.
