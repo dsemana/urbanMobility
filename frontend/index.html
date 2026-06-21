@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYC Taxi Mobility Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>NYC Taxi Mobility Dashboard</h1>
+    <p>January 2019</p>
+  </header>
+
+  <main>
+
+    <!-- KPI cards -->
+    <section class="cards" id="cards">
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+    </section>
+
+    <!-- Charts -->
+    <section class="grid">
+      <article>
+        <h2>Trips by hour</h2>
+        <p class="chart-note">Demand peaks at 6 PM; 4–5 AM is the overnight low.</p>
+        <canvas id="hourlyChart"></canvas>
+      </article>
+
+      <article>
+        <h2>Trips by borough</h2>
+        <p class="chart-note">Manhattan accounts for 90.7% of all pickups.</p>
+        <canvas id="boroughChart"></canvas>
+      </article>
+
+      <article>
+        <h2>Avg speed by hour (mph)</h2>
+        <p class="chart-note">Speed halves during business hours — a direct congestion signal.</p>
+        <canvas id="speedChart"></canvas>
+      </article>
+
+      <article>
+        <h2>Daily trip volume</h2>
+        <p class="chart-note">Weekends (orange) are slower; MLK Day Jan 21 dips clearly.</p>
+        <canvas id="dailyChart"></canvas>
+      </article>
+
+      <article>
+        <h2>Top 10 pickup zones</h2>
+        <ol id="zones"><li class="skeleton-text">Loading…</li></ol>
+      </article>
+
+      <article>
+        <h2>Top 10 ranked routes</h2>
+        <p class="chart-note">Scored by volume + revenue. Higher = more economically significant.</p>
+        <ol id="routes"><li class="skeleton-text">Loading…</li></ol>
+      </article>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <label>
+        Borough
+        <select id="borough">
+          <option value="">All boroughs</option>
+        </select>
+      </label>
+      <label>
+        Min distance (mi)
+        <input id="distance" type="number" min="0" value="0" step="0.5">
+      </label>
+      <label>
+        Payment
+        <select id="payment">
+          <option value="">All payments</option>
+          <option>Credit card</option>
+          <option>Cash</option>
+          <option>No charge</option>
+          <option>Dispute</option>
+        </select>
+      </label>
+      <button id="apply">Apply filters</button>
+    </section>
+
+    <!-- Trip table -->
+    <section>
+      <div class="table-header">
+        <h2>Trip detail</h2>
+        <span id="trip-count" class="badge"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Pickup time</th>
+              <th>Route</th>
+              <th>Distance</th>
+              <th>Duration</th>
+              <th>Speed</th>
+              <th>Fare</th>
+              <th>Tip</th>
+              <th>Total</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody id="trips">
+            <tr><td colspan="9" class="empty">Apply filters or wait for initial load…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    NYC TLC Yellow Taxi · January 2019  
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
