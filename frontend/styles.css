@@ -1,15 +1,23 @@
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     background: #f5f7fb;
     color: #172033;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 header {
     background: #111827;
     color: white;
     padding: 2rem;
+    border-bottom: 3px solid #f7c948;
 }
+
+header h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+header p   { color: #9ca3af; font-size: 0.85rem; }
 
 main {
     padding: 1.5rem;
@@ -21,35 +29,221 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.card,
-article,
-.filters,
-section > table {
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.1rem 1rem 1rem;
+    box-shadow: 0 8px 24px #0001;
+    border-top: 3px solid #f7c948;
+    min-height: 80px;
+}
+
+.card .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.card strong {
+    font-size: 1.7rem;
+    font-weight: 800;
+    display: block;
+    letter-spacing: -0.02em;
+    color: #111827;
+}
+
+.card.accent  { border-top-color: #e05a2b; }
+.card.sky     { border-top-color: #4a90c4; }
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    margin: 1rem 0;
+    flex-wrap: wrap;
     background: white;
     border-radius: 14px;
     padding: 1rem;
     box-shadow: 0 8px 24px #0001;
 }
 
-.card strong {
-    font-size: 1.8rem;
-    display: block;
-}
-
-.filters {
+.filters label {
     display: flex;
-    gap: 1rem;
-    align-items: end;
-    margin: 1rem 0;
-    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    gap: 4px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+article {
+    background: white;
+    border-radius: 14px;
+    padding: 1.1rem;
+    box-shadow: 0 8px 24px #0001;
+}
+
+article h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #111827;
+}
+
+.chart-note {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+ol {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+ol li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.82rem;
+    color: #374151;
+    line-height: 1.4;
+}
+
+ol li:last-child { border-bottom: none; }
+
+ol li .route-score {
+    float: right;
+    font-family: monospace;
+    font-size: 0.78rem;
+    background: #f3f4f6;
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: #374151;
+}
+
+section:last-of-type {
+    background: white;
+    border-radius: 14px;
+    padding: 1.1rem;
+    box-shadow: 0 8px 24px #0001;
+    margin-bottom: 1rem;
+}
+
+.table-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.table-header h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.badge {
+    font-size: 0.72rem;
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family: monospace;
+}
+
+.table-wrap { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+    text-align: left;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7280;
+    white-space: nowrap;
+    background: #f9fafb;
+}
+
+td {
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+tr:hover td { background: #f9fafb; }
+
+td.num { font-family: monospace; text-align: right; }
+
+.empty {
+    text-align: center;
+    color: #9ca3af;
+    padding: 2rem;
+}
+
+.pagination {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding-top: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.pg-btn {
+    background: white;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.pg-btn:hover   { background: #f3f4f6; }
+.pg-btn.active  { background: #111827; color: white; border-color: #111827; }
+.pg-btn:disabled{ opacity: 0.4; cursor: default; }
+
+.pg-info {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-family: monospace;
+    margin-left: 4px;
+}
+
+input, select {
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    background: #f9fafb;
+    color: #172033;
+    font-family: inherit;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #f7c948;
+    outline-offset: -1px;
 }
 
 button {
@@ -57,35 +251,43 @@ button {
     color: white;
     border: 0;
     border-radius: 10px;
-    padding: 0.7rem 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    font-family: inherit;
 }
 
-input,
-select {
-    padding: 0.55rem;
-    border: 1px solid #ccd;
-    border-radius: 8px;
+button:hover { opacity: 0.85; }
+
+@keyframes shimmer {
+    from { background-position: -400px 0; }
+    to   { background-position:  400px 0; }
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
+.skeleton {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 800px 100%;
+    animation: shimmer 1.4s infinite;
+    border-radius: 14px;
+    min-height: 80px;
+    border-top: 3px solid #e5e7eb !important;
 }
 
-th,
-td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #eee;
-    text-align: left;
+.skeleton-text { color: #d1d5db; font-style: italic; }
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    border-top: 1px solid #e5e7eb;
 }
 
 @media (max-width: 700px) {
-    header {
-        padding: 1rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
+    header  { padding: 1rem; }
+    main    { padding: 1rem; }
+    .grid   { grid-template-columns: 1fr; }
+    .cards  { grid-template-columns: repeat(2, 1fr); }
 }
