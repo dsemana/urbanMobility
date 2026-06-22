@@ -199,3 +199,6 @@ http://localhost:5000/api/exclusion-log
 ---
 ## Video Walkthrough
 https://youtu.be/tXyvgojhAOg
+---
+## Team participation link
+https://docs.google.com/spreadsheets/d/1Z0kK292ZlCpICVqmDDFTq9_6i_Q86wXGVo3FYSMqvH8/edit?usp=sharing
