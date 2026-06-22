@@ -197,3 +197,5 @@ http://localhost:5000/api/exclusion-log
 | Negative duration | Timestamp error |
 
 ---
+## Video Walkthrough
+https://youtu.be/tXyvgojhAOg
